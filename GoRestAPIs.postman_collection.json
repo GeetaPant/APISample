@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "6392a770-85f3-4fe8-a60a-ae9683db56b5",
+		"name": "GoRestAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21343247"
+	},
+	"item": [
+		{
+			"name": "GetAllUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2d5eb4c756fe2618bbb8296d7a913ea96c7f4fdb8ad0a569a0378abc7b8be6bf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers_Pagination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2d5eb4c756fe2618bbb8296d7a913ea96c7f4fdb8ad0a569a0378abc7b8be6bf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users?page=10&per_page=40",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "10"
+						},
+						{
+							"key": "per_page",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetA SingleUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2d5eb4c756fe2618bbb8296d7a913ea96c7f4fdb8ad0a569a0378abc7b8be6bf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users/7159093",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7159093"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gracy\",\r\n    \"email\":\"Gracy@micro.com\",\r\n    \"gender\": \"female\",\r\n    \"status\":\"Active\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser_DummyData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"gender\": \"female\",\r\n    \"status\":\"Active\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Virat Kohli\",\r\n    \"email\":\"Virat@micro.com\",\r\n    \"gender\": \"Male\",\r\n    \"status\" :\"active\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users/7158750",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7158750"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a specific userdetail",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kareena Kapoor\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/public/v2/users/7159093",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7159093"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TokenID",
+			"value": "Bearer 2d5eb4c756fe2618bbb8296d7a913ea96c7f4fdb8ad0a569a0378abc7b8be6bf ",
+			"type": "string"
+		}
+	]
+}
